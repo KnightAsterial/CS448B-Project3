@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS 448B Project 3: Software Companies</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <div id="visualization"></div>
+    <div id="inputs">
+      <p id="min-rating-label">Minimum Rating: 0</p>
+      <input type="range" class="ratings-slider" id="min-slider" min="0" max="5" step="0.1" value="0" />
+      <p id="max-rating-label">Maximum Rating: 5</p>
+      <input type="range" class="ratings-slider" id="max-slider" min="0" max="5" step="0.1" value="5"/>
+    </div>
+    
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+	  <script src="script.js"></script>
+  </body>
+</html>
