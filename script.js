@@ -138,8 +138,10 @@ d3.csv('data/data.csv').then( data => {
     .attr('cx', d => projection([d.Longitude, d.Latitude])[0])
     .attr('cy', d => projection([d.Longitude, d.Latitude])[1])
     .attr('class', 'companyCircle')
+    .attr('id', d => 'companyCircle' + d.ID)
     .attr('fill', d => d.InFilter ? 'black' : 'silver')
     .on('mouseover', (event, d) => {
+      d3.select('#companyCircle' + d.ID).attr('fill', 'red')
       text1 = svg.append('text')
         .attr('class', 'tooltip')
         .attr('x', projection([d.Longitude, d.Latitude])[0] + tooltipOffset)
@@ -166,6 +168,7 @@ d3.csv('data/data.csv').then( data => {
     })
     .on('mouseout', (event, d) => {
       svg.selectAll('.tooltip').remove()
+      d3.select('#companyCircle' + d.ID).attr('fill', d => d.InFilter ? 'black' : 'silver')
     })
 
   let min_rating = 0;
