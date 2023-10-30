@@ -67,7 +67,6 @@ d3.csv('data/data.csv').then( data => {
   data.forEach((elem) => {
     elem.InFilter = false
   })
-  console.log(data[0])
 
   let locationGroups = svg.selectAll('.locationGroup')
     .data(locations)
